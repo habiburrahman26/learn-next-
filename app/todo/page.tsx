@@ -1,4 +1,5 @@
 import Link from "next/link";
+import CountLength from "../components/countLength";
 
 type Todo = {
   id: number;
@@ -18,8 +19,8 @@ async function getTodo() {
 }
 
 async function page() {
-  const data = await getTodo();
-  console.log(data);
+  const data: Todo[] = await getTodo();
+
   return (
     <div className="space-y-2">
       <p className="text-2xl py-4 text-center">Todo List</p>
@@ -28,6 +29,7 @@ async function page() {
           {todo.title}
         </Link>
       ))}
+      <CountLength length={data.length} />
     </div>
   );
 }

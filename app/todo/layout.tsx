@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import Link from "next/link";
 
 type AboutLayoutProps = {
   children: ReactNode;
@@ -9,9 +10,12 @@ function AboutLayout(props: AboutLayoutProps) {
 
   return (
     <section>
-      <nav className="py-2 bg-amber-600 text-center text-xl">
-        <p>This is from todo layout</p>
-      </nav>
+      <div className="flex justify-between items-center px-4 bg-amber-600">
+        <p className="py-2 text-xl">This is from todo layout</p>
+        <nav>
+          <Link href="/todo">Todo</Link>
+        </nav>
+      </div>
       {children}
     </section>
   );
