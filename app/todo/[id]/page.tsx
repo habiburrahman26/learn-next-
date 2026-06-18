@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import { refresh } from "next/cache";
 import { redirect } from "next/navigation";
 
@@ -12,9 +13,14 @@ async function createPost(formData: FormData) {
   redirect("/");
 }
 
+export const metadata: Metadata = {
+  title: "Single todo",
+  description: "This is single todo page",
+};
+
 async function SingleTodo(props: SingleTodoProps) {
   const { id } = await props.params;
-  const par = await props.searchParams;
+  // const par = await props.searchParams;
 
   return (
     <div>
