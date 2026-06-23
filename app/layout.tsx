@@ -29,8 +29,12 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <nav className="py-2 bg-pink-600 text-center text-3xl">
-          <p>This is from ROOT layout</p> <Link href="/todo">Todo</Link>
+        <nav className="py-2 bg-pink-600 text-center text-3xl flex items-center justify-between px-4">
+          <p>This is from ROOT layout</p>
+          <div className="flex justify-center gap-4 py-2 text-base">
+            <Link href="/todo">Todo</Link> <Link href="/about">About</Link>
+            <Link href="/users">Users</Link>
+          </div>
         </nav>
         {children}
       </body>
