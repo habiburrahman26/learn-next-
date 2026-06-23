@@ -41,9 +41,14 @@ async function getUsers() {
 async function page() {
   const users = await getUsers();
   return (
-    <div>
+    <div className="grid grid-cols-4 gap-4 pt-6">
       {users.map((user: User) => (
-        <div key={user.id}>{user.name}</div>
+        <div key={user.id} className="border p-4 rounded-md shadow-md">
+          <p className="text-lg font-semibold">{user.name}</p>
+          <p className="text-gray-600">{user.email}</p>
+          <p className="text-gray-600">{user.phone}</p>
+          <p className="text-gray-600">{user.website}</p>
+        </div>
       ))}
     </div>
   );
